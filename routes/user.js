@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  getMyProfile,
   loginHandler,
   logoutHandler,
   registerHandler,
@@ -13,5 +14,6 @@ app.post("/login", loginHandler);
 
 app.use(isAuthenticated);
 app.get("/logout", logoutHandler);
+app.get("/me", getMyProfile);
 
 export default app;

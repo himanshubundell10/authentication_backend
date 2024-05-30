@@ -42,4 +42,13 @@ const logoutHandler = TryCatch(async (req, res, next) => {
   });
 });
 
-export { registerHandler, loginHandler, logoutHandler };
+const getMyProfile =TryCatch(async(req,res,next)=>{
+  console.log(req.user)
+
+   return res.status(200).json({
+      success: true,
+      user:req.user,
+    });
+})
+
+export { registerHandler, loginHandler, logoutHandler, getMyProfile  };
